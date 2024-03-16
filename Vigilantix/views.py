@@ -19,7 +19,7 @@ import http.client
 #     return render(request,"Vigilantix/landingpage.html")
 
 def landingpage(request):
-    return render(request,"Vigilantix\landingpage.html")
+    return render(request,"Vigilantix\index.html")
 
 def search(request):
     latitude = 27.030703

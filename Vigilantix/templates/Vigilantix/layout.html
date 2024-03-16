@@ -31,7 +31,7 @@
         <ul  class=" md:flex items-center align-middle float-left mx-auto font-semibold font-heading space-x-12">
           <li style="width:6rem"><a class=" w-11 hover:text-gray-200 dec " href="{% url 'search' %}" style="text-decoration:none; font-family: 'Poppins', sans-serif; padding:10px 0px 0px 0px">Search</a></li>
           <li style="width:6rem"><a class="hover:text-gray-200" href="{% url 'routing' %}" style="text-decoration:none; font-family: 'Poppins', sans-serif; padding:10px 0px 0px 0px">Routing</a></li>
-          <li style="width:8rem"><a class="hover:text-gray-200" href="{% url 'police' %}" style="text-decoration:none; font-family: 'Poppins', sans-serif; padding:10px 0px 0px 0px">Add Your Data</a></li>
+          <li style="width:8rem"><a class="hover:text-gray-200" href="{% url 'Vigilantix:police' %}" style="text-decoration:none; font-family: 'Poppins', sans-serif; padding:10px 0px 0px 0px">Add Your Data</a></li>
           <li style="width:6rem"><a class="hover:text-gray-200" href="{% url 'contact' %}" style="text-decoration:none; font-family: 'Poppins', sans-serif; padding:10px 0px 0px 0px">Contact Us</a></li>
           
           {% if user.is_authenticated %}
