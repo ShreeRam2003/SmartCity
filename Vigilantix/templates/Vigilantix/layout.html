@@ -21,13 +21,13 @@
     </head>
     <body>
 
-    <nav style="background-color:#242424;" class="flex text-white w-screen">
+    <nav style="background-color: lightgray; color: black; height: 70px" class="flex text-white w-screen">
       <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-        <a class="text-3xl font-bold font-heading hover:no-underline " style="text-decoration:none; font-family: 'Montserrat', sans-serif;" href="#">
-          Vigilantix
+        <a class="text-3xl font-bold font-heading hover:no-underline " style="color:black; text-decoration:none; font-family: 'Montserrat', sans-serif;" href="#">
+          Saferoute
         </a>
       </div>
-      <div class="  py-6 flex  items-center align-middle" style="width:70%;">
+      <div class="  py-6 flex  items-center align-middle" style="color: black; width:70%;">
         <ul  class=" md:flex items-center align-middle float-left mx-auto font-semibold font-heading space-x-12">
           <li style="width:6rem"><a class=" w-11 hover:text-gray-200 dec " href="{% url 'search' %}" style="text-decoration:none; font-family: 'Poppins', sans-serif; padding:10px 0px 0px 0px">Search</a></li>
           <li style="width:6rem"><a class="hover:text-gray-200" href="{% url 'routing' %}" style="text-decoration:none; font-family: 'Poppins', sans-serif; padding:10px 0px 0px 0px">Routing</a></li>
@@ -58,7 +58,7 @@
         
           
         
-        {% comment %} <div class="body"  style="background-color: rgb(25, 24, 24);"> {% endcomment %}
+        <div class="body"  style="background-color: rgb(25, 24, 24);">
     {% block body %}
     {% endblock %}
         

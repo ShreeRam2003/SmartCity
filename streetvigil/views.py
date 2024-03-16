@@ -109,7 +109,7 @@ def register(request):
         login(request, user)
         return HttpResponseRedirect(reverse("index"))
     else:
-        return render(request, "register.html")
+        return render(request, "streetvigil/register.html")
 
 def capture(request):
     if request.method == 'POST':
