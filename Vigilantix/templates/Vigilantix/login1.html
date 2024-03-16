@@ -28,7 +28,7 @@
 
     <form
       class="form-group flex flex-col items-center"
-      action="{% url 'login' %}"
+      action="{% url 'Vigilantix:login' %}"
       method="post"
     >
       {% csrf_token %}
@@ -78,7 +78,7 @@
     <div
       class="mb-4 pt-4 text-4xl tracking-tight font-light text-center text-gray-900 dark:text-white"
     >
-      Don't have an account? <a href="{% url 'register' %}">Register here.</a>
+      Don't have an account? <a href="{% url 'Vigilantix:register' %}">Register here.</a>
     </div>
   </div>
 </div>

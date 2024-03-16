@@ -3,6 +3,7 @@ from django.conf.urls.static import static
 from . import views
 from django.conf import settings
 
+app_name = 'Vigilantix'  # Define the namespace here
 
 urlpatterns = [
     path("", views.landingpage, name="landingpage"),
