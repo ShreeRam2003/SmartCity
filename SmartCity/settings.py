@@ -63,7 +63,7 @@ TEMPLATES = [
 TEMPLATES[0]['DIRS'] += [
     os.path.join(BASE_DIR, 'Vigilantix', 'templates', 'Vigilantix'),  # Vigilantix app templates
     os.path.join(BASE_DIR, 'streetvigil', 'templates'),  # streetvigil app templates
-    os.path.join(BASE_DIR, 'wastesegregation', 'templates'),  # wastesegregation app templates
+    os.path.join(BASE_DIR, 'wastesegration', 'templates'),  # wastesegregation app templates
 ]
 
 WSGI_APPLICATION = 'SmartCity.wsgi.application'

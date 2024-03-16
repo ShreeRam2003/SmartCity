@@ -107,7 +107,7 @@ def register(request):
             })
         print("doneee")
         login(request, user)
-        return HttpResponseRedirect(reverse("index"))
+        return HttpResponseRedirect(reverse("streetvigil:index"))
     else:
         return render(request, "streetvigil/register.html")
 

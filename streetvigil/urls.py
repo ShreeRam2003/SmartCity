@@ -4,6 +4,7 @@ from django.urls import path
 from django.contrib import admin
 from .views import *
 
+
 urlpatterns = [
     # Authentication Routes
     path("login", login_view, name="login"),

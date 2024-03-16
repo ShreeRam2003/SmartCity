@@ -65,5 +65,5 @@ async def websocket_endpoint(websocket):
     await read_camera(websocket)
 
 
-def index(request):
-    return render(request, "index.html")
+def index2(request):
+    return render(request, "wastesegration/index2.html")
