@@ -6,16 +6,15 @@ from django.conf import settings
 
 urlpatterns = [
     path("", views.landingpage, name="landingpage"),
-    path("saferoute", views.search, name="index"),
-    path("saferoute/search", views.search, name="search"),
-    path("saferoute/routing", views.routing, name="routing"),
-    path("saferoute/police", views.police, name="police"),
-    path("saferoute/cammera", views.cammera, name="cammera"),
-    path("saferoute/contact", views.contact, name="contact"),
-    path("saferoute/register", views.register, name="register"),
-    path("saferoute/login", views.login_view, name="login"),
-    path("saferoute/logout", views.logout_view, name="logout"),
-    path("saferoute/getLocation",views.get_location, name= "getLocation")
+    path("search", views.search, name="search"),
+    path("routing", views.routing, name="routing"),
+    path("police", views.police, name="police"),
+    path("cammera", views.cammera, name="cammera"),
+    path("contact", views.contact, name="contact"),
+    path("register", views.register, name="register"),
+    path("login", views.login_view, name="login"),
+    path("logout", views.logout_view, name="logout"),
+    path("getLocation",views.get_location, name= "getLocation")
 ]
 
 if settings.DEBUG:

@@ -5,7 +5,7 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    path('', include('Vigilantix.urls')),
+    path('saferoute/', include('Vigilantix.urls')),
     path('traffic/', include('streetvigil.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
     path('admin/', admin.site.urls),

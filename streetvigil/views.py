@@ -60,7 +60,7 @@ def index(request):
             'rejected': rejected,
         }
 
-    return render(request, 'index.html', context)
+    return render(request, 'streetvigil/index.html', context)
 
 def login_view(request):
     if request.method == "POST":
@@ -78,12 +78,12 @@ def login_view(request):
                 "message": "Invalid username and/or password."
             })
     else:
-        return render(request, "login.html")
+        return render(request, "streetvigil/login.html")
 
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect(reverse("index"))
+    return HttpResponseRedirect(reverse("streetvigil/index"))
 
 
 def register(request):
@@ -93,7 +93,7 @@ def register(request):
         password = request.POST.get("password")
         confirmation = request.POST.get("confirmation")
         if password != confirmation:
-            return render(request, "register.html", {
+            return render(request, "streetvigil/register.html", {
                 "message": "Passwords must match."
             })
 
@@ -102,12 +102,12 @@ def register(request):
             print("data saveing")
             user.save()
         except IntegrityError:
-            return render(request, "register.html", {
+            return render(request, "streetvigil/register.html", {
                 "message": "Username already taken."
             })
         print("doneee")
         login(request, user)
-        return HttpResponseRedirect(reverse("index"))
+        return HttpResponseRedirect(reverse("streetvigil/index"))
     else:
         return render(request, "streetvigil/register.html")
 
@@ -127,7 +127,7 @@ def capture(request):
     else:
         form = CapturedImageForm()
 
-    return render(request, 'capture.html', {'form': form})
+    return render(request, 'streetvigil/capture.html', {'form': form})
 
 from django.shortcuts import render, redirect
 
@@ -165,7 +165,7 @@ def upload(request):
             return JsonResponse({'error': 'Form errors', 'errors': form.errors})
     else:
         form = CapturedImageForm()
-    return render(request, 'upload.html', {'form': form})
+    return render(request, 'streetvigil/upload.html', {'form': form})
 
 def report_interface(request):
     instance_id = request.session.get('captured_image_instance')
@@ -209,17 +209,17 @@ def report_submission_view(request):
 
         del request.session['captured_image_instance']
 
-        return redirect('success_page')
+        return redirect('streetvigil/success_page')
 
     form = CapturedImageForm(instance=instance)
     return render(request, 'report_interface.html', {'form': form})
 
 def success_page(request):
-    return render(request, 'success_page.html')
+    return render(request, 'streetvigil/success_page.html')
 
 def all_images(request):
     images = CapturedImage.objects.all()
-    return render(request, 'all_images.html', {'images': images})
+    return render(request, 'streetvigil/all_images.html', {'images': images})
 
 def report_interface(request):
     # Assuming you have the instance_id saved in the session during the upload view
@@ -295,7 +295,7 @@ def police(request):
     context = {
         'crime_data_objects': crime_data_objects,
     }
-    return render(request, 'police_dashboard/policed.html', context)
+    return render(request, 'streetvigil/police_dashboard/policed.html', context)
 
 def crime_report(request, crime_id):
     if request.method == "POST" :
@@ -330,7 +330,7 @@ def crime_report(request, crime_id):
         'crime_map_html': crime_map_html,  # Pass the map as HTML string
     }
 
-    return render(request, 'police_dashboard/crime_report.html', context)
+    return render(request, 'streetvigil/police_dashboard/crime_report.html', context)
 
 def details(request, crime_id):
     crime_event = get_object_or_404(CapturedImage, id=crime_id)
@@ -349,7 +349,7 @@ def details(request, crime_id):
         'crime_map_html': crime_map_html,  # Pass the map as HTML string
     }
 
-    return render(request, 'details.html', context)
+    return render(request, 'streetvigil/details.html', context)
 
 @csrf_exempt
 def fetch_number_plate_data(request, crime_id):
@@ -465,7 +465,7 @@ def store(request):
             'total_rewards': total_rewards,
         }
     else:
-        return redirect('login')
+        return redirect('streetvigil/login')
 
-    return render(request, 'store.html', context)
+    return render(request, 'streetvigil/store.html', context)
   

@@ -15,8 +15,8 @@ from .models import PolicStation,SecurityCamera,CustomUser
 import http.client
 
 
-def index(request):
-    return render(request,"Vigilantix/index1.html")
+# def index(request):
+#     return render(request,"Vigilantix/landingpage.html")
 
 def landingpage(request):
     return render(request,"Vigilantix\landingpage.html")
