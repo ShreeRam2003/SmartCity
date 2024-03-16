@@ -14,6 +14,7 @@ urlpatterns = [
 
     # Pages
     path('', index, name='index'),
+    path('index', index, name='index'),
     path('capture', capture, name='capture'),
     path('aftercapture', aftercapture, name='aftercapture'),
     path('upload', upload, name='upload'),
@@ -33,3 +34,5 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

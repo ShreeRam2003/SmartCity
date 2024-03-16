@@ -83,7 +83,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect(reverse("streetvigil/index"))
+    return HttpResponseRedirect(reverse("index"))
 
 
 def register(request):
@@ -107,7 +107,7 @@ def register(request):
             })
         print("doneee")
         login(request, user)
-        return HttpResponseRedirect(reverse("streetvigil/index"))
+        return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "streetvigil/register.html")
 
@@ -432,6 +432,7 @@ def fetch_number_plate_data(request, crime_id):
 #     else:
 #         redirect('login')
 #     return render(request, 'store.html',{'total_rewards':total_rewards})
+
 
 def store(request):
     if request.method == "POST":
