@@ -19,7 +19,7 @@ def index(request):
     return render(request,"Vigilantix/index1.html")
 
 def landingpage(request):
-    return render(request,"Vigilantix/landingpage.html")
+    return render(request,"Vigilantix\landingpage.html")
 
 def search(request):
     latitude = 27.030703
